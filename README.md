@@ -17,6 +17,7 @@ Tech stack
 Features
 
 Authentication & authorisation
+
 •	Custom signup, login, and logout views built on Django's auth system
 •	Three-tier role-based access control enforced by a custom @role_required decorator: 
 o	Viewer   browse products, use the cart, place orders (default role on signup)
@@ -24,10 +25,12 @@ o	Accountant   access order history and aggregated sales reports
 o	Admin   full CRUD over products and categories
 
 Data layer
+
 •	Six models: Role, Category, Product, Cart, Order, OrderItem
 •	Relational schema with foreign keys and a one-to-one user–role mapping, managed through the Django ORM
 
 Store functionality
+
 •	Full CRUD for products and categories, including product image uploads
 •	Category-filtered shop page, product detail pages, and a featured-products home page
 •	Database-backed persistent cart tied to the logged-in user (survives sessions)
@@ -35,6 +38,7 @@ Store functionality
 •	Sales report aggregating total revenue and order count for accountants
 
 Setup
+
 1. Clone and enter the project
 git clone <repo-url>
 cd ecommerce_lab
@@ -58,19 +62,35 @@ python manage.py createsuperuser
 
 7. Start the server
 python manage.py runserver
+
+
 The site runs at http://127.0.0.1:8000/ and the Django admin at http://127.0.0.1:8000/admin/.
+
+
 Project structure
+
+
 ecommerce/          # Project settings, root URL config
+
 shop/
+
   models.py         # Role, Category, Product, Cart, Order, OrderItem
+  
   views.py          # Auth, CRUD, cart, checkout, reporting
+  
   decorators.py     # @role_required   RBAC enforcement
+  
   urls.py           # Route definitions
+  
   admin.py          # Model registration
+  
 templates/          # Django templates
+
 media/              # Uploaded product images (gitignored)
 
+
 Possible extensions
+
 · Payment gateway integration
 · email order notifications
 · search and filtering
