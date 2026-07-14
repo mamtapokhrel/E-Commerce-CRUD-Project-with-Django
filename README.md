@@ -4,6 +4,7 @@ A mini e-commerce application built with Django and MySQL, featuring custom auth
 
 Built by: Mamata Pokharel | BSc.CSIT, St. Xavier's College, Kathmandu 
 | Course: E-Commerce
+
 Tech stack
 . Python 3.12 
 · Django 4.2 
